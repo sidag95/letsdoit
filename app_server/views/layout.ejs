@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app= 'letsdoitApp'>
+  <head>
+  	<meta name='viewport' content='width=device-width' initial-scale=1.0/>
+    <title><%= title %></title>
+    <link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+  </head>
+  <body>
+    <%- include('_includes/header'); %>
+    <div class="container" ng-view>
+    </div>
+    <%- include('_includes/footer'); %>
+    <script type="text/javascript" src="/angular/angular.js"></script>
+    <script type="text/javascript" src="/angular/angular-route.min.js"></script>
+    <script type="text/javascript" src="/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src='/angular/letsdoit.min.js'></script>
+   <!--  <script type="text/javascript" src="/app.js"></script>
+    <script type="text/javascript" src="/common/services/letsdoitData.service.js"></script>
+    <script type="text/javascript" src="/lists/lists.controller.js"></script> -->
+    
+    
+  </body>
+</html>

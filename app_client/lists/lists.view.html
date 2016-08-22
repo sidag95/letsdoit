@@ -1,0 +1,54 @@
+ <navigation></navigation>
+<div class="container">
+<div class="row">
+        <page-header content="vm.pageHeader"></page-header>
+        <div class="row">
+            <div class="col-sm-12 col-md-8">
+                <div class="row">
+                  <label for="filter">Filter Results</label>
+                  <input type="text" class="form-control input" name="filter" ng-model = "textFilter">
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 error"><p><br>{{ vm.message }}</p></div>
+                  <!-- <div class="col-sm-4 col-sm-offset-8">
+                    <button type="button" class="btn pull-right undo">
+                      Undo
+                    </button><br>
+                  </div> -->
+                </div>
+                    <div class="panel panel-default tasks" ng-repeat="task in vm.data.tasks | filter : textFilter" id={{task._id}}> 
+                      <div class="panel-heading">
+                        <h3 class="panel-title">{{ task.taskName }}</h3>
+                      </div>
+                      <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-9 task-text">
+                              <p>{{ task.taskBody }}</p>
+                            </div>
+                            <div class="col-xs-3">
+                               <a href=""><button type="button" class="btn btn-default btn tick-btn">
+                               <span class="glyphicon glyphicon-ok pull-right tick" aria-hidden="true">
+                              </button></span>
+                              <a href="/#/lists/{{task._id}}"><button type="button" class="btn btn-default pencil-btn">
+                                <span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span>
+                              </button></a>
+                              <a href=""><button type="button" class="btn btn-default btn delete-btn">
+                                  <span class="glyphicon glyphicon-trash pull-right" aria-hidden="true"></span>
+                              </button></a>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <h3>Tasks</h3>
+                <div class="list-group">
+                      <a role="button" class="btn list-group-item" ng-repeat="task in vm.data.tasks" href= {{"#"+task._id}} >{{task.taskName}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a  ng-click="vm.popupAddTask()" href="#" class="btn btn-primary btn-lg fixed" role="button">Add a new Task</a>
+
+</div>
+     <footer-generic></footer-generic>

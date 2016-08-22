@@ -1,0 +1,25 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand">LetsDo.It</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-navbar"></span>
+            <span class="icon-navbar"></span>
+            <span class="icon-navbar"></span>
+          </button>
+        </div>
+        <div id="navbar-main" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav pull-right">
+            <li><a href="/#about">About</a></li>
+            <li ng-hide="navvm.isLoggedIn"><a href="/#signup?page={{ navvm.currentPath }}">Signup</a></li>
+            <li ng-hide="navvm.isLoggedIn"><a href="/#login">Login</a></li>
+            <li ng-show="navvm.isLoggedIn" class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown">{{navvm.currentUser.name }} <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="" ng-click="navvm.logout()">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
